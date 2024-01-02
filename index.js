@@ -65,9 +65,10 @@ app.get('/camera/:id', (req, res) => {
   `)
 })
 
-app.use(cors())
+app.use(cors({ origin: '*' }))
 app.use(express.json())
+const PORT = process.env.PORT || 3000
 
-app.listen(8000, () => {
+app.listen(PORT, () => {
   console.log('Listening on port 8000!')
 })
